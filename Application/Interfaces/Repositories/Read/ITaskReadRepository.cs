@@ -1,4 +1,4 @@
-namespace Application.Interfaces.Repository.Read;
+namespace Application.Interfaces.Repositories.Read;
 
 public interface ITaskReadRepository : IReadRepository<Task>
 {

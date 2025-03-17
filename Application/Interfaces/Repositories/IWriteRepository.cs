@@ -1,4 +1,4 @@
-namespace Application.Interfaces.Repository;
+namespace Application.Interfaces.Repositories;
 
 public interface IWriteRepository<T> where T : class
 {

@@ -1,4 +1,4 @@
-using Application.Interfaces.Repository.Read;
+using Application.Interfaces.Repositories.Read;
 using Domain.Entities;
 using MediatR;
 

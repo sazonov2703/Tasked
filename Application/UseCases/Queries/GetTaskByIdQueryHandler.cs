@@ -1,4 +1,4 @@
-using Application.Interfaces.Repository.Read;
+using Application.Interfaces.Repositories.Read;
 using MediatR;
 
 namespace Application.UseCases.Queries;

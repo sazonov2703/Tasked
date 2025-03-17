@@ -1,6 +1,6 @@
 using Domain.Entities;
 
-namespace Application.Interfaces.Repository.Read;
+namespace Application.Interfaces.Repositories.Read;
 
 public interface IUserReadRepository : IReadRepository<User>
 {

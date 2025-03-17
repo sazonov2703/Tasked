@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.OData.Query;
 
-namespace Application.Interfaces.Repository;
+namespace Application.Interfaces.Repositories;
 
 public interface IReadRepository<T> where T : class
 {
