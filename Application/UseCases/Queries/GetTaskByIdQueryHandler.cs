@@ -3,11 +3,11 @@ using MediatR;
 
 namespace Application.UseCases.Queries;
 
-public class GetTaskByIdQueryHandler(ITaskReadRepository taskReadRepository)
+public class GetTaskByIdQueryHandler(IUserTaskReadRepository userTaskReadRepository)
     : IRequestHandler<GetTaskByIdQuery, Task>
 {
     public async Task<Task> Handle(GetTaskByIdQuery request, CancellationToken cancellationToken)
     {
-        return await taskReadRepository.GetByIdAsync(request.Id, cancellationToken);
+        return userTaskReadRepository.GetByIdAsync(request.Id, cancellationToken);
     }
 }

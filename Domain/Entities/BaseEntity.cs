@@ -6,5 +6,5 @@ public class BaseEntity<T>
     {
         Id = Guid.NewGuid();
     }
-    Guid Id { get; set; }
+    public Guid Id { get; protected init; }
 }
