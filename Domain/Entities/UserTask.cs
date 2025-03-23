@@ -12,4 +12,5 @@ public class UserTask : BaseEntity<UserTask>
     public string Description { get; protected set; }
     
     public Guid UserId { get; protected set; }
+    public User User { get; protected set; }
 }
