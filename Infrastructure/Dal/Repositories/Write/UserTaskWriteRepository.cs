@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Dal.Repositories.Write;
 
-public class UserTaskWriteRepository(DbContext context) : BaseReadRepository<UserTask>(context)
+public class UserTaskWriteRepository(DbContext context) : BaseReadRepository<TodoTask>(context)
 {
     
 }

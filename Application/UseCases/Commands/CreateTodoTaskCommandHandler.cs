@@ -5,11 +5,11 @@ using MediatR;
 
 namespace Application.UseCases.Commands;
 
-public class CreateTaskCommandHandler(
+public class CreateTodoTaskCommandHandleк(
     IUserReadRepository userReadRepository,
-    IUserTaskWriteRepository userTaskWriteRepository) : IRequestHandler<CreateTaskCommand, Guid>
+    ITodoTaskWriteRepository todoTaskWriteRepository) : IRequestHandler<CreateTodoTaskCommand, Guid>
 {
-    public async Task<Guid> Handle(CreateTaskCommand request, CancellationToken cancellationToken)
+    public async Task<Guid> Handle(CreateTodoTaskCommand request, CancellationToken cancellationToken)
     {
         var user = userReadRepository.GetByIdAsync(request.UserId, cancellationToken);
 
@@ -18,9 +18,9 @@ public class CreateTaskCommandHandler(
             throw new NullReferenceException();
         }
         
-        var userTask = new UserTask(request.Name, request.Description, request.UserId);
+        var userTask = new TodoTask(request.Title, request.Description, request.Status, request.Priority, request.UserId);
         
-        await userTaskWriteRepository.AddAsync(userTask, cancellationToken);
+        await todoTaskWriteRepository.AddAsync(userTask, cancellationToken);
         
         return userTask.Id;
     }

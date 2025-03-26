@@ -2,4 +2,4 @@ using MediatR;
 
 namespace Application.UseCases.Commands;
 
-public record CreateUserCommand(string username) : IRequest<Guid>;
+public record CreateUserCommand(string Username, string Email, string PasswordHash) : IRequest<Guid>;

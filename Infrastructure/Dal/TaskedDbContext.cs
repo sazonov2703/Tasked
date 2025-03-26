@@ -6,7 +6,7 @@ namespace Infrastructure.Dal;
 
 public class TaskedDbContext : DbContext
 {
-    public DbSet<UserTask> UserTasks { get; set; }
+    public DbSet<TodoTask> UserTasks { get; set; }
     public DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -14,7 +14,7 @@ public class TaskedDbContext : DbContext
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.ApplyConfiguration(new UserConfigurarion());
-        modelBuilder.ApplyConfiguration(new UserTaskConfiguration());
+        modelBuilder.ApplyConfiguration(new TodoTaskConfiguration());
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

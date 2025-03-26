@@ -4,7 +4,9 @@ using MediatR;
 
 namespace Application.UseCases.Queries;
 
-public class GetUserByIdQueryHandler(IUserReadRepository userReadRepository) : IRequestHandler<GetUserByIdQuery, User>
+public class GetUserByIdQueryHandler(
+    IUserReadRepository userReadRepository) 
+    : IRequestHandler<GetUserByIdQuery, User>
 {
     public async Task<User> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
     {

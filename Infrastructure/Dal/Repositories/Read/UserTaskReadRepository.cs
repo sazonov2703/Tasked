@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Dal.Repositories.Read;
 
-public class UserTaskReadRepository(DbContext context) : BaseReadRepository<UserTask>(context)
+public class UserTaskReadRepository(DbContext context) : BaseReadRepository<TodoTask>(context)
 {
     
 }

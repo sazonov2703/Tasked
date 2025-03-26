@@ -3,4 +3,4 @@ using MediatR;
 
 namespace Application.UseCases.Queries;
 
-public record GetUserTaskByIdQuery(Guid Id) : IRequest<UserTask>;
+public record GetTodoTaskByIdQuery(Guid Id) : IRequest<TodoTask>;

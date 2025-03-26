@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1a5Iq2XWIkA=",
+  "dgSpecHash": "2d84oT/QTT4=",
   "success": true,
   "projectFilePath": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Application\\Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Larry\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\Larry\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
     "C:\\Users\\Larry\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Larry\\.nuget\\packages\\microsoft.aspnetcore.odata\\9.2.1\\microsoft.aspnetcore.odata.9.2.1.nupkg.sha512",

@@ -1,6 +1,6 @@
 namespace Domain.ValueObjects;
 
-public class Status : BaseValueObject<Status>
+public class Priority : BaseValueObject<Priority>
 {
     public string Value { get; private set; }
 }
