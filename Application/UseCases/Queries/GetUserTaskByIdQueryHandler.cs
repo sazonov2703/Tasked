@@ -4,11 +4,11 @@ using MediatR;
 
 namespace Application.UseCases.Queries;
 
-public class GetTodoTaskByIdQueryHandler(
+public class GetUserTaskByIdQueryHandler(
     ITodoTaskReadRepository todoTaskReadRepository)
-    : IRequestHandler<GetTodoTaskByIdQuery, TodoTask>
+    : IRequestHandler<GetUserTaskByIdQuery, UserTask>
 {
-    public async Task<TodoTask> Handle(GetTodoTaskByIdQuery request, CancellationToken cancellationToken)
+    public async Task<UserTask> Handle(GetUserTaskByIdQuery request, CancellationToken cancellationToken)
     {
         return await todoTaskReadRepository.GetByIdAsync(request.Id, cancellationToken);
     }

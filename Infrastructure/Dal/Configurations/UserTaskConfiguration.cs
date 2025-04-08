@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Dal.Configurations;
 
-public class TodoTaskConfiguration : IEntityTypeConfiguration<TodoTask>
+public class UserTaskConfiguration : IEntityTypeConfiguration<UserTask>
 {
-    public void Configure(EntityTypeBuilder<TodoTask> builder)
+    public void Configure(EntityTypeBuilder<UserTask> builder)
     {
-        builder.ToTable(nameof(TodoTask));
+        builder.ToTable(nameof(UserTask));
         
         builder.HasKey(x => x.Id);
         
@@ -33,7 +33,7 @@ public class TodoTaskConfiguration : IEntityTypeConfiguration<TodoTask>
         });
         
         builder.HasOne(x => x.User)
-            .WithMany(x => x.Tasks)
+            .WithMany(x => x.UserTasks)
             .HasForeignKey(x => x.UserId)
             .OnDelete(DeleteBehavior.NoAction);
     }

@@ -6,6 +6,14 @@ namespace Domain.Entities;
 public class User : BaseEntity<User>
 {
     /// <summary>
+    /// Пустой конструктор для EF core.
+    /// </summary>
+    private User()
+    {
+        
+    }
+    
+    /// <summary>
     /// Конструктор создания пользователя.
     /// </summary>
     /// <param name="username">Юзернейм.</param>
@@ -40,7 +48,7 @@ public class User : BaseEntity<User>
     /// <summary>
     /// Навигационные свойства.
     /// </summary>
-    public List<TodoTask> Tasks { get; protected set; }
+    public List<UserTask> UserTasks { get; protected set; }
     
     #endregion
     

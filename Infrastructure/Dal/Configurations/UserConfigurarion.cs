@@ -17,7 +17,7 @@ public class UserConfigurarion : IEntityTypeConfiguration<User>
             .HasMaxLength(20)
             .HasColumnName(nameof(User.Username));
         
-        builder.HasMany(x => x.Tasks)
+        builder.HasMany(x => x.UserTasks)
             .WithOne(T => T.User)
             .HasForeignKey(T => T.UserId)
             .OnDelete(DeleteBehavior.Cascade);

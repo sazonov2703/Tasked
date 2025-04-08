@@ -4,8 +4,15 @@ using Domain.ValueObjects;
 
 namespace Domain.Entities;
 
-public class TodoTask : BaseEntity<TodoTask>
+public class UserTask : BaseEntity<UserTask>
 {
+    /// <summary>
+    /// Пустой конструктор для EF core.
+    /// </summary>
+    private UserTask()
+    {
+        
+    }
     /// <summary>
     /// Конструктор создания задачи.
     /// </summary>
@@ -14,7 +21,7 @@ public class TodoTask : BaseEntity<TodoTask>
     /// <param name="status">Статус выполнения.</param>
     /// <param name="priority">Приоритет выполнения.</param>
     /// <param name="userId">Связь с пользователем(Id).</param>
-    public TodoTask(string title, string description, Status status, Priority priority, Guid userId)
+    public UserTask(string title, string description, Status status, Priority priority, Guid userId)
     {
         Title = title;
         Description = description;
