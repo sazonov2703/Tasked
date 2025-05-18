@@ -21,12 +21,4 @@ public class TaskedDbContext : DbContext
         modelBuilder.ApplyConfiguration(new UserConfigurarion());
         modelBuilder.ApplyConfiguration(new UserTaskConfiguration());
     }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseNpgsql("", (options) =>
-        {
-            options.CommandTimeout(10);
-        });
-    }
 }

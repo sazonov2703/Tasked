@@ -1,3 +1,4 @@
+using Application.Exceptions;
 using Application.Interfaces.Repositories.Read;
 using Application.Interfaces.Repositories.Write;
 using Domain.Entities;
@@ -5,23 +6,36 @@ using MediatR;
 
 namespace Application.UseCases.Commands;
 
-public class CreateTodoTaskCommandHandleк(
+public class CreateUserTaskCommandHandler(
     IUserReadRepository userReadRepository,
-    ITodoTaskWriteRepository todoTaskWriteRepository) : IRequestHandler<CreateUserTaskCommand, Guid>
+    IUserTaskWriteRepository userTaskWriteRepository) 
+    : IRequestHandler<CreateUserTaskCommand, Guid>
 {
     public async Task<Guid> Handle(CreateUserTaskCommand request, CancellationToken cancellationToken)
     {
-        var user = userReadRepository.GetByIdAsync(request.UserId, cancellationToken);
-
-        if (user == null)
+        try
         {
-            throw new NullReferenceException();
+            var user = await userReadRepository.GetByIdAsync(request.UserId, cancellationToken);
+
+            if (user == null)
+            {
+                throw new UserNotFoundException(request.UserId);
+            }
+            
+            var userTask = new UserTask(request.Title, request.Description, request.Status, request.Priority, request.UserId);
+            
+            await userTaskWriteRepository.AddAsync(userTask, cancellationToken);
+            await userTaskWriteRepository.SaveChangesAsync(cancellationToken);
+            
+            return userTask.Id;
         }
-        
-        var userTask = new UserTask(request.Title, request.Description, request.Status, request.Priority, request.UserId);
-        
-        await todoTaskWriteRepository.AddAsync(userTask, cancellationToken);
-        
-        return userTask.Id;
+        catch (UserNotFoundException)
+        {
+            throw;
+        }
+        catch (Exception ex)
+        {
+            throw new TaskedException($"Failed to create task. Error: {ex.Message}", ex);
+        }
     }
 }

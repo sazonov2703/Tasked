@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using Domain.Events;
 
 namespace Domain.Entities;
@@ -22,10 +21,10 @@ public class User : BaseEntity<User>
     public User(string username, string email, string passwordHash)
     {
         Username = username;
-        Email = Email;
+        Email = email;
         PasswordHash = passwordHash;
         
-       AddDomainEvent(new UserCreatedEvent(Id, Username, Email, PasswordHash)); 
+        AddDomainEvent(new UserCreatedEvent(Id, Username, Email, PasswordHash)); 
     }
     
     #region Свойства

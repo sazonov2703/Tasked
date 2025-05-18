@@ -29,7 +29,7 @@ public class UserTask : BaseEntity<UserTask>
         Priority = priority;
         UserId = userId;
         
-        AddDomainEvent(new TodoTaskCreatedEvent(Id, Title, Description, Status, Priority));
+        AddDomainEvent(new UserTaskCreatedEvent(Id, Title, Description, Status, Priority));
     }
 
     #region Свойства
@@ -76,8 +76,8 @@ public class UserTask : BaseEntity<UserTask>
         Status = newStatus;
         Priority = newPriority;
         
-        AddDomainEvent(new TodoTaskUpdatedEvent(
-            Id, newTitle, newDescription, newStatus, newPriority, 
+        AddDomainEvent(new UserTaskUpdatedEvent(
+            Id, newTitle, newDescription, newStatus, newPriority,
             oldTitle, oldDescription, oldStatus, oldPriority));
     }
     

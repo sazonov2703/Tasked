@@ -10,24 +10,24 @@ public abstract class BaseWriteRepository<T>(DbContext context) : IWriteReposito
     
     public async Task AddAsync(T entity, CancellationToken cancellationToken)
     {
-        _dbSet.Add(entity);
+        await Task.Run(() => _dbSet.Add(entity), cancellationToken);
     }
 
     public async Task UpdateAsync(T entity, CancellationToken cancellationToken)
     {
-        _dbSet.Update(entity);
+        await Task.Run(() => _dbSet.Update(entity), cancellationToken);
     }
 
     public async Task DeleteAsync(Guid id, CancellationToken cancellationToken)
     { 
-        var entity = _dbSet.Find(id);
+        var entity = await _dbSet.FindAsync([id], cancellationToken);
 
-        if (entity != null)
+        if (entity == null)
         {
             throw new KeyNotFoundException($"Сущность {typeof(T).Name} с Id {id} не найдена.");
         }
         
-        _dbSet.Remove(entity);
+        await Task.Run(() => _dbSet.Remove(entity), cancellationToken);
     }
 
     public async Task SaveChangesAsync(CancellationToken cancellationToken)

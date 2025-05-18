@@ -13,10 +13,12 @@ public abstract class BaseReadRepository<T>(DbContext context) : IReadRepository
     public async Task<T> GetByIdAsync(Guid id, CancellationToken cancellationToken)
     {
         var entity = await _dbSet.FindAsync([id], cancellationToken);
+        
         if (entity == null)
         {
             throw new KeyNotFoundException($"Сущность {typeof(T).Name} с Id {id} не найдена.");
         }
+        
         return entity;
     }
 
@@ -27,8 +29,6 @@ public abstract class BaseReadRepository<T>(DbContext context) : IReadRepository
 
     public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
     {
-        var entities = await _dbSet.Where(predicate).ToListAsync(cancellationToken);
-        
-        return entities;
+        return await _dbSet.Where(predicate).ToListAsync(cancellationToken);
     }
 }

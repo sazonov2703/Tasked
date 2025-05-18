@@ -3,10 +3,19 @@ using Domain.Interfaces;
 
 namespace Domain.Events;
 
+/// <summary>
+/// Событие обновления пользователя.
+/// </summary>
 public class UserUpdatedEvent : IDomainEvent
 {
-    public UserUpdatedEvent(Guid userId, string newUsername, string newEmail, string newPasswordHash,
-        string oldUsername, string oldEmail, string oldPasswordHash)
+    public UserUpdatedEvent(
+        Guid userId,
+        string newUsername,
+        string newEmail,
+        string newPasswordHash,
+        string oldUsername,
+        string oldEmail,
+        string oldPasswordHash)
     {
         UserId = userId;
         NewUsername = newUsername;
@@ -15,15 +24,15 @@ public class UserUpdatedEvent : IDomainEvent
         OldUsername = oldUsername;
         OldEmail = oldEmail;
         OldPasswordHash = oldPasswordHash;
-        UpdatenAt = DateTime.Now;
+        OccurredAt = DateTime.UtcNow;
     }
 
-    private Guid UserId { get; set; }
-    private string NewUsername { get; set; }
-    private string NewEmail { get; set; }
-    private string NewPasswordHash { get; set; }
-    private string OldUsername { get; set; }
-    private string OldEmail { get; set; }
-    private string OldPasswordHash { get; set; }
-    DateTime UpdatenAt { get; set; }
+    public Guid UserId { get; init; }
+    public string NewUsername { get; init; }
+    public string NewEmail { get; init; }
+    public string NewPasswordHash { get; init; }
+    public string OldUsername { get; init; }
+    public string OldEmail { get; init; }
+    public string OldPasswordHash { get; init; }
+    public DateTime OccurredAt { get; init; }
 }

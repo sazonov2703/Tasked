@@ -97,7 +97,7 @@ public class BaseEntity<T> where T : BaseEntity<T>
         _domainEvents.Clear();
     }
 
-    protected void AddDomainEvent(IDomainEvent domainEvent)
+    public void AddDomainEvent(IDomainEvent domainEvent)
     {
         _domainEvents.Add(domainEvent);
     }

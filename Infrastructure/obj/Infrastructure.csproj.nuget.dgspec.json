@@ -1,18 +1,19 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Larry\\RiderProjects\\Tasked\\Infrastructure\\Infrastructure.csproj": {}
+    "C:\\Projects\\Tasked\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Larry\\RiderProjects\\Tasked\\Application\\Application.csproj": {
+    "C:\\Projects\\Tasked\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Projects\\Tasked\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Application\\Application.csproj",
+        "projectPath": "C:\\Projects\\Tasked\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Larry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Application\\obj\\",
+        "outputPath": "C:\\Projects\\Tasked\\Application\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -32,8 +33,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Larry\\RiderProjects\\Tasked\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Domain\\Domain.csproj"
+              "C:\\Projects\\Tasked\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Projects\\Tasked\\Domain\\Domain.csproj"
               }
             }
           }
@@ -47,8 +48,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net9.0": {
@@ -83,15 +83,16 @@
         }
       }
     },
-    "C:\\Users\\Larry\\RiderProjects\\Tasked\\Domain\\Domain.csproj": {
+    "C:\\Projects\\Tasked\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Projects\\Tasked\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Projects\\Tasked\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Larry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Domain\\obj\\",
+        "outputPath": "C:\\Projects\\Tasked\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -122,8 +123,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net9.0": {
@@ -158,15 +158,16 @@
         }
       }
     },
-    "C:\\Users\\Larry\\RiderProjects\\Tasked\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Projects\\Tasked\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Projects\\Tasked\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Projects\\Tasked\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Larry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Projects\\Tasked\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -186,11 +187,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Larry\\RiderProjects\\Tasked\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Application\\Application.csproj"
+              "C:\\Projects\\Tasked\\Application\\Application.csproj": {
+                "projectPath": "C:\\Projects\\Tasked\\Application\\Application.csproj"
               },
-              "C:\\Users\\Larry\\RiderProjects\\Tasked\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Larry\\RiderProjects\\Tasked\\Domain\\Domain.csproj"
+              "C:\\Projects\\Tasked\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Projects\\Tasked\\Domain\\Domain.csproj"
               }
             }
           }
@@ -204,38 +205,37 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.0-preview.1.24081.5, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.0-preview.1.24081.5, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.0-preview.1.24081.2, )"
             },
-            "Microsoft.EntityFrameworkCore.Relational": {
-              "target": "Package",
-              "version": "[9.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
+            "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.3, )"
-            },
-            "Npgsql": {
-              "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.0-preview.1.24081.2, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[9.0.0-preview.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
             }
           },
           "imports": [

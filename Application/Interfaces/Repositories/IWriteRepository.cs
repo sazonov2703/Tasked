@@ -9,4 +9,6 @@ public interface IWriteRepository<T> where T : class
     Task UpdateAsync(T entity, CancellationToken cancellationToken);
 
     Task DeleteAsync(Guid id, CancellationToken cancellationToken);
+
+    Task SaveChangesAsync(CancellationToken cancellationToken);
 }
