@@ -1,74 +1,77 @@
 # Tasked
 
-A clean architecture-based task management system built with .NET.
+Многопользовательский онлайн сервис для управления задачами, построенный по принципам чистой архитектуры на платформе .NET.
 
-## Features
+## Возможности
 
-- Task management with status tracking (Todo, InProgress, Done)
-- Priority-based task organization
-- User-specific task assignments
-- Domain-driven design implementation
-- Clean architecture principles
-- Event-driven architecture for status changes
+- Управление задачами с отслеживанием статусов (Todo, InProgress, Done)
 
-## Project Structure
+- Организация задач по приоритету
 
-The solution follows clean architecture principles with three main layers:
+- Назначение задач конкретным пользователям
 
-### Domain Layer
-- Contains core business logic
-- Entities (UserTask, User)
-- Value Objects (Status, Priority)
-- Domain Events
-- Repository Interfaces
+- Реализация предметно-ориентированного проектирования (DDD)
 
-### Application Layer
-- Use Cases (CQRS pattern with MediatR)
-- DTOs
-- Interfaces for external services
+- Чистая архитектура
 
-### Infrastructure Layer
-- Data Access Layer (DAL)
-- API Controllers
-- Database Context
-- Repository Implementations
+- Событийно-ориентированная архитектура для отслеживания изменений статуса
 
-## Getting Started
+## Структура проекта
 
-### Prerequisites
-- .NET 8.0 SDK
-- SQL Server (or compatible database)
+Решение построено на принципах чистой архитектуры и включает три основные слоя:
 
-### Setup
-1. Clone the repository
-2. Update connection string in `appsettings.json`
-3. Run database migrations
-4. Start the application
+### Domain (Доменный слой)
+- Основная бизнес-логика
+- Сущности (UserTask, User)
+- Объекты-значения (Status, Priority)
+- Доменные события
+- Интерфейсы репозиториев
 
-## Architecture
+### Application (Прикладной слой)
+- Use Cases (используется CQRS с MediatR)
+- DTO (Data Transfer Objects)
+- Интерфейсы для внешних сервисов
 
-The project follows clean architecture principles:
-- Domain layer is independent of other layers
-- Application layer depends only on Domain
-- Infrastructure layer implements interfaces defined in Domain and Application layers
-- Dependencies point inward
+### Infrastructure (Инфраструктурный слой)
+- Слой доступа к данным (DAL)
+- API-контроллеры
+- Контекст базы данных
+- Реализации репозиториев
 
-## Status Management
+## Начало работы
+### Предварительные требования
+- .NET SDK 8.0
+- SQL Server (или совместимая база данных)
 
-Tasks can have one of three statuses:
-- Todo
-- InProgress
-- Done
+### Установка
+- Клонируйте репозиторий
+- Обновите строку подключения в appsettings.json
+- Примените миграции базы данных
+- Запустите приложение
 
-Status changes are tracked through domain events, allowing for:
-- Audit logging
-- Notifications
-- Integration with other systems
+## Архитектура
 
-## Contributing
+Проект следует принципам чистой архитектуры:
+- Доменный слой не зависит от других
+- Прикладной слой зависит только от доменного
+- Инфраструктура реализует интерфейсы, определённые в домене и приложении
+- Все зависимости направлены внутрь
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request 
+## Управление статусами
+
+Задачи могут иметь один из трёх статусов:
+- Todo (К выполнению)
+- InProgress (В процессе)
+- Done (Выполнено)
+
+Изменения статуса отслеживаются с помощью доменных событий, что позволяет:
+- Вести логирование
+- Отправлять уведомления
+- Интегрироваться с внешними системами
+
+# Вклад в проект
+1. Сделайте форк репозитория
+2. Создайте новую ветку с фичей
+3. Зафиксируйте изменения
+4. Отправьте ветку в репозиторий
+5. Создайте Pull Request
