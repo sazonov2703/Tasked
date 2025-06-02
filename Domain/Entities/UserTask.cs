@@ -64,6 +64,17 @@ public class UserTask : BaseEntity<UserTask>
     
     #region Методы
 
+    public void ChangeStatus(Status newStatus)
+    {
+        if (Status == newStatus)
+            return;
+            
+        Status oldStatus = Status;
+        Status = newStatus;
+        
+        AddDomainEvent(new UserTaskStatusChangedEvent(Id, newStatus, oldStatus));
+    }
+
     public void Update(string newTitle, string newDescription, Status newStatus, Priority newPriority)
     {
         string oldTitle = Title;

@@ -232,6 +232,24 @@ app.MapDelete("/api/tasks/{id}", async (IMediator mediator, ClaimsPrincipal user
 .WithName("DeleteTask")
 .WithOpenApi();
 
+app.MapPatch("/api/tasks/{id}/status", async (IMediator mediator, ClaimsPrincipal user, Guid id, ChangeTaskStatusRequest request) =>
+{
+    var userId = Guid.Parse(user.FindFirst(ClaimTypes.NameIdentifier)?.Value!);
+    var command = new ChangeTaskStatusCommand(id, request.Status);
+    var result = await mediator.Send(command);
+    
+    if (!result.IsSuccess)
+        return Results.BadRequest(new { message = result.Error });
+    
+    var query = new GetUserTaskByIdQuery(id, userId);
+    var task = await mediator.Send(query);
+    
+    return Results.Ok(new UserTaskResponse(task!));
+})
+.RequireAuthorization()
+.WithName("ChangeTaskStatus")
+.WithOpenApi();
+
 app.Run();
 
 // Helper methods
