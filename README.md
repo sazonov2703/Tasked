@@ -1,77 +1,77 @@
 # Tasked
 
-Многопользовательский онлайн сервис для управления задачами, построенный по принципам чистой архитектуры на платформе .NET.
+Multi-user online task management service built on the principles of clean architecture on the .NET platform.
 
-## Возможности
+## Features
 
-- Управление задачами с отслеживанием статусов (Todo, InProgress, Done)
+- Task management with status tracking (Todo, InProgress, Done)
 
-- Организация задач по приоритету
+- Organization of tasks by priority
 
-- Назначение задач конкретным пользователям
+- Assigning tasks to specific users
 
-- Реализация предметно-ориентированного проектирования (DDD)
+- Implementing Domain-Driven Design (DDD)
 
-- Чистая архитектура
+- Clean architecture
 
-- Событийно-ориентированная архитектура для отслеживания изменений статуса
+- Event-driven architecture for tracking status changes
 
-## Структура проекта
+## Project Structure
 
-Решение построено на принципах чистой архитектуры и включает три основные слоя:
+The solution is built on the principles of clean architecture and includes three main layers:
 
-### Domain (Доменный слой)
-- Основная бизнес-логика
-- Сущности (UserTask, User)
-- Объекты-значения (Status, Priority)
-- Доменные события
-- Интерфейсы репозиториев
+### Domain (Domain layer)
+- Main business logic
+- Entities (UserTask, User)
+- Value objects (Status, Priority)
+- Domain events
+- Repository interfaces
 
-### Application (Прикладной слой)
-- Use Cases (используется CQRS с MediatR)
+### Application (Application layer)
+- Use Cases (CQRS with MediatR is used)
 - DTO (Data Transfer Objects)
-- Интерфейсы для внешних сервисов
+- Interfaces for external services
+  
+### Infrastructure
+- Data Access Layer (DAL)
+- API Controllers
+- Database Context
+- Repository Implementations
 
-### Infrastructure (Инфраструктурный слой)
-- Слой доступа к данным (DAL)
-- API-контроллеры
-- Контекст базы данных
-- Реализации репозиториев
-
-## Начало работы
-### Предварительные требования
+## Getting Started
+### Prerequisites
 - .NET SDK 8.0
-- SQL Server (или совместимая база данных)
+- SQL Server (or compatible database)
 
-### Установка
-- Клонируйте репозиторий
-- Обновите строку подключения в appsettings.json
-- Примените миграции базы данных
-- Запустите приложение
+### Installation
+- Clone the repository
+- Update the connection string in appsettings.json
+- Apply database migrations
+- Run the application
 
-## Архитектура
+## Architecture
 
-Проект следует принципам чистой архитектуры:
-- Доменный слой не зависит от других
-- Прикладной слой зависит только от доменного
-- Инфраструктура реализует интерфейсы, определённые в домене и приложении
-- Все зависимости направлены внутрь
+The project follows the principles of clean architecture:
+- The domain layer does not depend on others
+- The application layer depends only on the domain
+- The infrastructure implements interfaces defined in the domain and application
+- All dependencies are directed inward
 
-## Управление статусами
+## Status management
 
-Задачи могут иметь один из трёх статусов:
-- Todo (К выполнению)
-- InProgress (В процессе)
-- Done (Выполнено)
+Tasks can have one of three statuses:
+- Todo
+- InProgress
+- Done
 
-Изменения статуса отслеживаются с помощью доменных событий, что позволяет:
-- Вести логирование
-- Отправлять уведомления
-- Интегрироваться с внешними системами
+Status changes are tracked using domain events, which allows you to:
+- Log
+- Send notifications
+- Integrate with external systems
 
-# Вклад в проект
-1. Сделайте форк репозитория
-2. Создайте новую ветку с фичей
-3. Зафиксируйте изменения
-4. Отправьте ветку в репозиторий
-5. Создайте Pull Request
+# Contribute to the project
+1. Fork the repository
+2. Create a new branch with a feature
+3. Commit the changes
+4. Send the branch to the repository
+5. Create a Pull Request
